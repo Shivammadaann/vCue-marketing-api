@@ -9,6 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // ⚠️ This was missing – required to read req.body
 
+// ⬇️ ADD THESE TWO LINES ⬇️
+const accessToken = process.env.META_ACCESS_TOKEN;
+const accountId = process.env.META_ACCOUNT_ID;
+
 // Validate required variables
 if (!accessToken || !accountId) {
     console.error('ERROR: Missing required environment variables META_ACCESS_TOKEN and/or META_ACCOUNT_ID');
