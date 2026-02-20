@@ -9,10 +9,6 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // ⚠️ This was missing – required to read req.body
 
-// Read environment variables (set these in Hostinger)
-const accessToken = process.env.META_ACCESS_TOKEN;
-const accountId = process.env.META_ACCOUNT_ID; // Should be just the number (e.g., '123456789')
-
 // Validate required variables
 if (!accessToken || !accountId) {
     console.error('ERROR: Missing required environment variables META_ACCESS_TOKEN and/or META_ACCOUNT_ID');
