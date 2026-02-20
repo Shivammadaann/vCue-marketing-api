@@ -76,7 +76,7 @@ app.post('/api/meta/custom-audience', async (req, res) => {
         // Step 1: Create a new audience if requested [citation:1]
         if (createNew) {
             const createResponse = await fetch(
-                `https://graph.facebook.com/v24.0/act_${accountId}/customaudiences`,
+                `https://graph.facebook.com/v24.0/act_1623342811661129/customaudiences`,
                 {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
