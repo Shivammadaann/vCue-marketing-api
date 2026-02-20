@@ -51,12 +51,6 @@ app.get('/api/meta-ads', async (req, res) => {
     }
 });
 
-// Use port from environment (Hostinger provides this) or fallback to 3000
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
-
 // Add crypto for hashing (required by Meta)
 const crypto = require('crypto');
 
@@ -172,4 +166,10 @@ app.post('/api/meta/custom-audience', async (req, res) => {
         console.error('Custom audience error:', error);
         res.status(500).json({ error: error.message });
     }
+});
+
+// Use port from environment (Hostinger provides this) or fallback to 3000
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
